@@ -20,7 +20,7 @@ jobs:
       
     - name: Generate Output Path 
       id: output_path
-      run: echo "::set-output name=OUTPUTPATH::C:\\actions-runner\\_work\\build_output\\${{github.ref_name}}\\artifacts\\${{steps.date.outputs.date}}.${{github.run_id}}.${{github.run_number}}.${{github.run_attempt}}"
+      run: echo "::set-output name=OUTPUTPATH::C:\\actions-runner\\_work\\build_output\\${{github.ref_name}}\\artifacts\\${{steps.date.outputs.date}}.${{env.BUILD_NUMBER}}"
       
     - name: Show Env ${{github.ref_name}}
       run: echo ${{env.BUILD_NUMBER}}
