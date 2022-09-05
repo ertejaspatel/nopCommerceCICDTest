@@ -11,10 +11,8 @@ env:
 
 jobs:
   build:
-
     runs-on: windows-latest
-
-        
+    steps:
     - name: Show Env
       run: env
   
