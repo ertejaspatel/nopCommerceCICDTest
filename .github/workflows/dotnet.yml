@@ -14,8 +14,11 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - name: Generate current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     - name: Show Env ${{github.ref_name}}
       run: env
     - name: Output PATH
-      run: echo ${{env.OUTPUT_PATH}} 
+      run: echo ${{ steps.date.outputs.date }}
   
