@@ -15,4 +15,6 @@ jobs:
     steps:
     - name: Show Env ${GITHUB_REF#refs/*/} 
       run: env
+    - name: Branch Name
+      run: echo ${GITHUB_REF##*/}
   
