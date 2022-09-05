@@ -16,5 +16,5 @@ jobs:
     - name: Show Env ${GITHUB_REF#refs/*/} 
       run: env
     - name: Branch Name
-      run: echo ${GITHUB_REF##*/}
+      run: echo ${{github.ref_name}}
   
