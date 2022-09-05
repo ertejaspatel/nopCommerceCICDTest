@@ -7,7 +7,7 @@ on:
     branches: [ "develop" ]
     
 env:
-  BUILD_NUMBER: ${{ github.event.repository.updated_at}}.${{github.run_id}}.${{github.run_number}}.${{github.run_attempt}}
+  BUILD_NUMBER: $(date +'%Y-%m-%d').${{github.run_id}}.${{github.run_number}}.${{github.run_attempt}}
 #   OUTPUT_PATH: "C:\\actions-runner\\_work\build_output\\${{github.ref_name}}\\artifacts\\${{BUILD_NUMBER}}"
   
 jobs:
@@ -20,7 +20,7 @@ jobs:
       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
     - name: Show Env ${{github.ref_name}}
-      run: env
+      run: echo ${{env.BUILD_NUMBER}}
       
     - name: Output PATH
       run: echo ${{ steps.date.outputs.date }}
