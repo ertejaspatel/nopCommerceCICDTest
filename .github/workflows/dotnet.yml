@@ -5,6 +5,8 @@ on:
     branches: [ "develop" ]
   pull_request:
     branches: [ "develop" ]
+env:
+  BUILD_NUMBER: ${{github.run_id}}.${{github.run_number}}.${{github.run_attempt}}
   
 jobs:
   build:
