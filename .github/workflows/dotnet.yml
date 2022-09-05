@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - name: Show Env ${GITHUB_REF#refs/*/} 
+    - name: Show Env ${{github.ref_name}}
       run: env
     - name: Branch Name
       run: echo ${{github.ref_name}}
