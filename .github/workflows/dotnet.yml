@@ -16,7 +16,7 @@ jobs:
     
     - name: Generate current date
       id: date
-      run: echo 'CURRENT_DT=${{(Get-Date -format "yyyy")}}-${{(Get-Date -format "MM")}}-${{(Get-Date -format "dd")}}-${{(Get-Date -format "HH")}}-${{(Get-Date -format "mm")}}' >> $GITHUB_ENV
+      run: echo "CURRENT_DT=${{(Get-Date -format 'yyyy')}}-${{(Get-Date -format 'MM')}}-${{(Get-Date -format 'dd')}}-${{(Get-Date -format 'HH')}}-${{(Get-Date -format 'mm')}}" >> $GITHUB_ENV
       
     - name: Generate Output Path 
       id: output_path
