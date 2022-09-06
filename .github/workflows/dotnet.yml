@@ -24,7 +24,7 @@ jobs:
       run: echo "::set-output name=OUTPUTPATH::C:\\actions-runner\\_work\\build_output\\${{github.ref_name}}\\artifacts\\${{steps.date.outputs.date}}.${{env.BUILD_NUMBER}}"
       
     - name: Show Env ${{github.ref_name}}
-      run: echo ${{env.BUILD_NUMBER}}
+      run: 'echo ${{env.BUILD_NUMBER}} ${{env.CURRENT_DATE}}'
       
     - name: Output PATH
       run: echo ${{ steps.output_path.outputs.OUTPUTPATH }}
