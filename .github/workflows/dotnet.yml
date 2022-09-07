@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Test 
       run: |
-        $ENV: PSModulePath
+        ${{env.PSModulePath}}
         Get-Module -ListAvailable
         
       
