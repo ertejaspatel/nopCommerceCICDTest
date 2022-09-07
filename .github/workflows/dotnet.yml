@@ -20,6 +20,7 @@ jobs:
         echo "Powershell Module Path ${{env.PS_MODULE_PATH}}"
         if (Test-Path -Path "${{env.PS_MODULE_PATH}}") { "PSModulePath exists in PATH!" } else { $env:Path += ";${{env.PS_MODULE_PATH}}" }
         if (Test-Path -Path "${{env.PS_MODULE_PATH}}") { "PSModulePath exists in PATH!" } else { "Does not exist" }
+        Import-Module -Name Microsoft.PowerShell.Utility
         echo '::set-output name=date::"${{Get-Date -format 'yyyy-MM-dd-HH-mm'}}"'
         echo "${{steps.date.outputs.date}}"
     
