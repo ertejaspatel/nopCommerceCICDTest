@@ -33,6 +33,7 @@ jobs:
       run: |
          echo "${{env.CURRENT_DATE}}"
          echo "${{env.CURRENT_DT}}"
+         echo "${{steps.date.outputs.date}}"
     
         
       
