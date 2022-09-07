@@ -9,6 +9,7 @@ env:
   BUILD_NUMBER: ${{github.run_id}}.${{github.run_number}}.${{github.run_attempt}}
   PS_MODULE_PATH: "C:\\Program Files\\WindowsPowerShell\\Modules"
   CURRENT_DATE1: $(Get-Date -format 'yyyy-MM-dd-HH-mm')
+  ref_name: "TP/CICD"
   
 jobs:
   build:
@@ -31,6 +32,7 @@ jobs:
       run: |
          echo "${{env.CURRENT_DATE}}"
          echo "${{steps.date.outputs.date}}"
+         echo "C:\\actions-runner\\_work\\git_builds\\$('${{env.ref_name}}'.replace("/","_"))\\artifacts\\${{env.CURRENT_DATE1}}.${{env.BUILD_NUMBER}}"
     
         
       
