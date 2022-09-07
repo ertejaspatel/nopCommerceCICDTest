@@ -16,7 +16,8 @@ jobs:
     - name: Test 
       run: |
         echo "Powershell Module Path ${{env.PSModulePath}}"
-        'cd C:\\program files\\powershell\\7\\Modules'
+        if (Test-Path -Path ${{env.PSModulePath}}) { "PSModulePath exists in PATH!" } else { $env:Path += ";${{env.PSModulePath}}" }
+        if (Test-Path -Path ${{env.PSModulePath}}) { "PSModulePath exists in PATH!" } else { "Does not exist" }
         Get-Date -format 'yyyy-MM-dd-HH-mm'
         
       
