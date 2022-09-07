@@ -13,8 +13,11 @@ jobs:
     runs-on: windows-2019
     
     steps:
-    - name: Test ${{iex("Get-Date -format 'yyyy-MM-dd-HH-mm'")}}
-      run: echo "Test"
+    - name: Test 
+      run: |
+        $ENV: PSModulePath
+        Get-Module -ListAvailable
+        
       
     - name: Generate current date
       id: date
