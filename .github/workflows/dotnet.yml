@@ -29,6 +29,10 @@ jobs:
         echo "${{env.CURRENT_DT}}"
         echo "::set-output name=date::$(Get-Date -format 'yyyy-MM-dd-HH-mm')"
         echo "${{steps.date.outputs.date}}"
+    - name: Show Values
+      run: |
+         echo "${{env.CURRENT_DATE}}"
+         echo "${{env.CURRENT_DT}}"
     
         
       
