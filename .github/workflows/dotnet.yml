@@ -8,6 +8,7 @@ on:
 env:
   BUILD_NUMBER: ${{github.run_id}}.${{github.run_number}}.${{github.run_attempt}}
   PS_MODULE_PATH: "C:\\Program Files\\WindowsPowerShell\\Modules"
+  CURRENT_DATE1: $(Get-Date -format 'yyyy-MM-dd-HH-mm')
   
 jobs:
   build:
@@ -22,7 +23,7 @@ jobs:
         if (Test-Path -Path "${{env.PS_MODULE_PATH}}") { "PSModulePath exists in PATH!" } else { "Does not exist" }
         Import-Module -Name Microsoft.PowerShell.Utility
         $CURRENT_DATE=Get-Date -format 'yyyy-MM-dd-HH-mm'
-        echo $CURRENT_DATE
+        echo "Current Date: ${{env.CURRENT_DATE1}}"
         echo "CURRENT_DATE=$(Get-Date -format 'yyyy-MM-dd-HH-mm')" >> $GITHUB_ENV
         echo "::set-output name=date::$(Get-Date -format 'yyyy-MM-dd-HH-mm')"
         echo "${{steps.date.outputs.date}}"
