@@ -19,18 +19,6 @@ jobs:
         Get-Module -ListAvailable
         
       
-    - name: Generate current date
-      id: date
-      run: echo "CURRENT_DT=${{Get-Date -format 'yyyy-MM-dd-HH-mm'}}" >> $GITHUB_ENV
-      
-    - name: Generate Output Path 
-      id: output_path
-      run: echo "OUTPUTPATH=C:\\actions-runner\\_work\\build_output\\${{github.ref_name}}\\artifacts\\${{env.CURRENT_DT}}.${{env.BUILD_NUMBER}}" >> $GITHUB_ENV
-      
-    - name: Show Env ${{github.ref_name}}
-      run: 'echo ${{env.BUILD_NUMBER}} '
-      
-    - name: Output PATH
-      run: echo ${{ env.OUTPUTPATH }}
+    
     
       
