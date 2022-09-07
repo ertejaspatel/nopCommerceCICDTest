@@ -20,7 +20,7 @@ jobs:
         echo "Powershell Module Path ${{env.PS_MODULE_PATH}}"
         if (Test-Path -Path "${{env.PS_MODULE_PATH}}") { "PSModulePath exists in PATH!" } else { $env:Path += ";${{env.PS_MODULE_PATH}}" }
         if (Test-Path -Path "${{env.PS_MODULE_PATH}}") { "PSModulePath exists in PATH!" } else { "Does not exist" }
-        echo "::set-output name=date::${{Get-Date -format 'yyyy-MM-dd-HH-mm'}}"
+        echo '::set-output name=date::"${{Get-Date -format 'yyyy-MM-dd-HH-mm'}}"'
         echo "${{steps.date.outputs.date}}"
     
         
