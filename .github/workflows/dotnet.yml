@@ -15,6 +15,7 @@ jobs:
     steps:
     - name: Test 
       run: |
+        echo "Powershell Module Path ${{env.PSModulePath}}"
         'cd C:\\program files\\powershell\\7\\Modules'
         Get-Date -format 'yyyy-MM-dd-HH-mm'
         
