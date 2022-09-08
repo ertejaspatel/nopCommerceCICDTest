@@ -10,6 +10,7 @@ env:
   PS_MODULE_PATH: "C:\\Program Files\\WindowsPowerShell\\Modules"
   CURRENT_DATE1: $(Get-Date -format 'yyyy-MM-dd-HH-mm')
   ref_name: "TP/CICD"
+  ARTIFACTS_PATH: "C:\\test\\${{env.CURRENT_DATE1}}"
   
 jobs:
   build:
@@ -28,6 +29,7 @@ jobs:
         echo "CURRENT_DATE=$(Get-Date -format 'yyyy-MM-dd-HH-mm')" >> $GITHUB_ENV
         echo "::set-output name=date::$(Get-Date -format 'yyyy-MM-dd-HH-mm')"
         echo "${{steps.date.outputs.date}}"
+        echo ${{env.ARTIFACTS_PATH}}
     - name: Show Values
       run: |
          echo "${{env.CURRENT_DATE}}"
