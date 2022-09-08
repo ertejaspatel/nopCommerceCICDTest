@@ -10,7 +10,7 @@ env:
   PS_MODULE_PATH: "C:\\Program Files\\WindowsPowerShell\\Modules"
   CURRENT_DATE1: $(Get-Date -format 'yyyy-MM-dd-HH-mm')
   ref_name: "TP/CICD"
-  ARTIFACTS_PATH: "C:\\test\\${{env.CURRENT_DATE1}}"
+  ARTIFACTS_PATH: "C:\\actions-runner\\_work\\git_builds\\TP_CICD\\artifacts\\$(Get-Date -format 'yyyy-MM-dd-HH-mm').${{env.BUILD_NUMBER}}"
   
 jobs:
   build:
